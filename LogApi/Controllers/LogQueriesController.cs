@@ -15,6 +15,8 @@ namespace LogApi.Controllers
     private readonly Dictionary<string, int> queries;
     private readonly ILogger<LogQueriesController> _logger;
     private readonly ILogFileReader _logFileReader;
+
+    #region constructor 
     public LogQueriesController( ILogger<LogQueriesController> logger, ILogFileReader logFileReader)
     {
       _logger = logger;
@@ -22,7 +24,9 @@ namespace LogApi.Controllers
        queries = new Dictionary<string, int>();
      
     }
+    #endregion
 
+    #region Methods
     /// <summary>
     /// renvoie un JSON comptant le nombre de requête distincte sur la période
     /// </summary>
@@ -108,7 +112,7 @@ namespace LogApi.Controllers
       };
     }
 
-
+    #endregion
 
   }
 }
